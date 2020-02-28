@@ -1,0 +1,20 @@
+PODS:
+  - Alamofire (5.0.2)
+  - WechatOpenSDK (1.8.6)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.0)
+  - WechatOpenSDK
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - WechatOpenSDK
+
+SPEC CHECKSUMS:
+  Alamofire: 3ba7a4db18b4f62c4a1c0e1cb39d7f3d52e10ada
+  WechatOpenSDK: 368ae03b72ee3ea1328c4f11326fbb5d2721d118
+
+PODFILE CHECKSUM: a80064fb61a0e1015337646c0a9a268c6e794882
+
+COCOAPODS: 1.8.4
