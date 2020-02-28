@@ -66,6 +66,19 @@ struct ContentView: View {
                             Text("小程序登录")
                         }
                     }
+                    
+                    VStack {
+                        Image("alipay")
+                        .resizable()
+                        .frame(width: 50.0, height: 50)
+                        .scaledToFill()
+                        Button(action: {
+                            loginByAlipay()
+                        }) {
+                            Text("支付宝登录")
+                        }
+                    }
+                    
                 }
             }.navigationBarTitle(Text("Authing 社会化登录"))
         }

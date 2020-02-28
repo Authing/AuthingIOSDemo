@@ -12,5 +12,6 @@
 #import "WechatOpenSDK/WxApi.h"
 #import "WechatOpenSDK/WXApiObject.h"
 #import <CommonCrypto/CommonCrypto.h>
+#import "AlipaySDK/AlipaySDK.h"
 
 #endif /* Authing_Brigding_Header_h */

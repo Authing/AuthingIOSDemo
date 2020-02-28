@@ -18,6 +18,7 @@
 		6F6C99172407FBF000136425 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6C99162407FBF000136425 /* ImageView.swift */; };
 		6F6C99192407FC3400136425 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6C99182407FC3400136425 /* Utils.swift */; };
 		6F6C991B2407FCBE00136425 /* Configs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6C991A2407FCBE00136425 /* Configs.swift */; };
+		6F6C991E2408AC7800136425 /* Alipay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6C991D2408AC7800136425 /* Alipay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		6F6C99162407FBF000136425 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		6F6C99182407FC3400136425 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		6F6C991A2407FCBE00136425 /* Configs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configs.swift; sourceTree = "<group>"; };
+		6F6C991D2408AC7800136425 /* Alipay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alipay.swift; sourceTree = "<group>"; };
 		F342AC89F43DE037DCB0C907 /* Pods_Authing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Authing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -73,6 +75,7 @@
 		6F69D4182403D79D003AADFA /* Authing */ = {
 			isa = PBXGroup;
 			children = (
+				6F6C991C2408AC5D00136425 /* Services */,
 				6F6C99152407FBDE00136425 /* Views */,
 				6F6C990F2407F51500136425 /* Models */,
 				6F69D42E2403DFEA003AADFA /* Authing.entitlements */,
@@ -114,6 +117,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		6F6C991C2408AC5D00136425 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				6F6C991D2408AC7800136425 /* Alipay.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		9984E1DBACC2FE25925036D0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +154,7 @@
 				6F69D4132403D79D003AADFA /* Frameworks */,
 				6F69D4142403D79D003AADFA /* Resources */,
 				9792873666249F17739DA174 /* [CP] Embed Pods Frameworks */,
+				7139292C4C3E274984011743 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -222,6 +234,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		7139292C4C3E274984011743 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Authing/Pods-Authing-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Authing/Pods-Authing-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Authing/Pods-Authing-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9792873666249F17739DA174 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -253,6 +282,7 @@
 				6F69D41E2403D79D003AADFA /* ContentView.swift in Sources */,
 				6F6C99192407FC3400136425 /* Utils.swift in Sources */,
 				6F6C991B2407FCBE00136425 /* Configs.swift in Sources */,
+				6F6C991E2408AC7800136425 /* Alipay.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,20 +1,24 @@
 PODS:
   - Alamofire (5.0.2)
+  - AlipaySDK-iOS (15.6.8)
   - WechatOpenSDK (1.8.6)
 
 DEPENDENCIES:
   - Alamofire (~> 5.0)
+  - AlipaySDK-iOS
   - WechatOpenSDK
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - AlipaySDK-iOS
     - WechatOpenSDK
 
 SPEC CHECKSUMS:
   Alamofire: 3ba7a4db18b4f62c4a1c0e1cb39d7f3d52e10ada
+  AlipaySDK-iOS: 703a55774a37f412410ab04af96c011b91ec58cb
   WechatOpenSDK: 368ae03b72ee3ea1328c4f11326fbb5d2721d118
 
-PODFILE CHECKSUM: a80064fb61a0e1015337646c0a9a268c6e794882
+PODFILE CHECKSUM: 0a9fa5933d41070d299f0787548e139ab0e025a4
 
 COCOAPODS: 1.8.4

@@ -18,3 +18,13 @@ func convertToDictionary(text: String) -> [String: Any]? {
     }
     return nil
 }
+
+func parseUrlQueryString(string: String) -> [String:Any] {
+    let arr = string.components(separatedBy:"&")
+    var data = [String:Any]()
+    for row in arr {
+        let pairs = row.components(separatedBy:"=")
+        data[pairs[0]] = pairs[1]
+    }
+    return data
+}

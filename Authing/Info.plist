@@ -22,10 +22,20 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>authing</string>
+			<string>authing-wechat</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>wx1cddb15e280c0f67</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string></string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>authing-alipay</string>
 			</array>
 		</dict>
 	</array>

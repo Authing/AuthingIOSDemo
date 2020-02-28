@@ -34,9 +34,61 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, WXApiDelegate {
         WXApi.handleOpenUniversalLink(userActivity, delegate: self as! WXApiDelegate)
     }
     
+    // schema 回调
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
-        print(URLContexts)
-        WXApi.handleOpen(URLContexts.first!.url, delegate: self as! WXApiDelegate)
+        let url = URLContexts.first?.url
+        let schema = url!.scheme
+        switch schema {
+        case WechatAppId:
+            WXApi.handleOpen(URLContexts.first!.url, delegate: self as! WXApiDelegate)
+        case AlipayURLSchema:
+            AlipaySDK().processAuth_V2Result(url, standbyCallback: { back in
+                let response = back!
+                let resultStatus = response["resultStatus"] as! String
+                let memo = response["memo"]
+                let result = response["result"] as! String
+                
+                let data = parseUrlQueryString(string: result)
+                let success = data["success"]
+                let result_code = data["result_code"] as! String
+                let auth_code = data["auth_code"] as! String
+                let user_id = data["user_id"] as! String
+                
+                if resultStatus == "9000" && result_code == "200" {
+                    let url = "\(AuthingServerHost)/oauth/alipaymobile/redirect/\(UserPoolId)"
+                    struct Body: Encodable {
+                        let auth_code: String
+                    }
+                    let body = Body(auth_code: auth_code)
+                    AF.request(
+                        url,
+                        method: .post,
+                        parameters: body,
+                        encoder: JSONParameterEncoder.default
+                    ).responseString { response in
+                        
+                        // 将 response.value 转化成字符串，示例如下：
+                        // ["code": "200", "message": "获取用户信息成功", data: "" ]
+                        let resp = convertToDictionary(text: response.value!)!
+                        
+                        let data = resp["data"] as! [String: Any]
+                        debugPrint("Data: \(data)")
+                        
+                        // 更新 EnvironmentObject 触发页面更新
+                        let nickname = data["nickname"]! as! String
+                        let avatar = data["photo"]! as! String
+                        let unionid = data["unionid"]! as! String
+                        let phone = data["phone"]! as! String
+                        userInfo.avatar = avatar
+                        userInfo.nickname = nickname
+                        userInfo.unionid = unionid
+                        userInfo.phone = phone
+                    }
+                }
+            })
+        default:
+            debugPrint("???")
+        }
     }
 
     func onReq(_ req: BaseReq) {
@@ -44,6 +96,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, WXApiDelegate {
     }
 
     func onResp(_ resp: BaseResp) {
+        
+        debugPrint(resp)
         
         // 微信登录请求信息
         if resp.isKind(of: SendAuthResp.self) {
@@ -94,12 +148,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, WXApiDelegate {
                 
                 // 将 extMsg 转换成一个 dict
                 // ["code": "200", "ticket": "eyJhbGciOiJIUzI1NiIsInR5cCI6Ik", "message": "授权成功"]
-                let arr = extMsg.components(separatedBy:"&")
-                var data = [String:Any]()
-                for row in arr {
-                    let pairs = row.components(separatedBy:"=")
-                    data[pairs[0]] = pairs[1]
-                }
+                let data = parseUrlQueryString(string: extMsg)
                 
                 let code = data["code"]! as! String
                 let message = data["message"]! as! String

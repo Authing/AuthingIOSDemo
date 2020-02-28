@@ -8,4 +8,6 @@ target 'Authing' do
   # Pods for Authing
   pod 'WechatOpenSDK'
   pod 'Alamofire', '~> 5.0'
+  pod 'AlipaySDK-iOS'
+
 end

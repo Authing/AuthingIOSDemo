@@ -17,9 +17,9 @@
 - [接入移动应用小程序登录](https://docs.authing.cn/authing/advanced/social-login/app2wxapp)
 - [接入移动应用支付宝登录]()
 
-## 示例代码
+## 运行项目
 
-### 运行环境
+开发环境
 
 - Swift 5.1.3
 - Xcode 11.3
@@ -28,7 +28,6 @@
 - 微信版本: 7.0.7 或以上
 - iOS 系统版本: iOS12 或以上
 
-### 运行项目
 
 安装项目依赖：
 

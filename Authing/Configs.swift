@@ -16,3 +16,4 @@ let GetPhone: Bool = true
 let MiniProgramType = WXMiniProgramType.test
 let WechatAppId = "wx1cddb15e280c0f67"
 let WechatUniversalLink = "https://authing.cn/native/"
+let AlipayURLSchema = "authing-alipay"
