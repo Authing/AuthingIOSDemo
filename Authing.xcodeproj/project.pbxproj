@@ -19,6 +19,9 @@
 		6F6C99192407FC3400136425 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6C99182407FC3400136425 /* Utils.swift */; };
 		6F6C991B2407FCBE00136425 /* Configs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6C991A2407FCBE00136425 /* Configs.swift */; };
 		6F6C991E2408AC7800136425 /* Alipay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6C991D2408AC7800136425 /* Alipay.swift */; };
+		6FBA466D2409005500AF7B90 /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBA466C2409005500AF7B90 /* QRCodeView.swift */; };
+		6FBA466F2409034B00AF7B90 /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBA466E2409034B00AF7B90 /* QRCode.swift */; };
+		6FBA46712409041300AF7B90 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBA46702409041300AF7B90 /* Common.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +42,9 @@
 		6F6C99182407FC3400136425 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		6F6C991A2407FCBE00136425 /* Configs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configs.swift; sourceTree = "<group>"; };
 		6F6C991D2408AC7800136425 /* Alipay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alipay.swift; sourceTree = "<group>"; };
+		6FBA466C2409005500AF7B90 /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
+		6FBA466E2409034B00AF7B90 /* QRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCode.swift; sourceTree = "<group>"; };
+		6FBA46702409041300AF7B90 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		F342AC89F43DE037DCB0C907 /* Pods_Authing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Authing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -113,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				6F6C99162407FBF000136425 /* ImageView.swift */,
+				6FBA466C2409005500AF7B90 /* QRCodeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -121,6 +128,8 @@
 			isa = PBXGroup;
 			children = (
 				6F6C991D2408AC7800136425 /* Alipay.swift */,
+				6FBA466E2409034B00AF7B90 /* QRCode.swift */,
+				6FBA46702409041300AF7B90 /* Common.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -278,11 +287,14 @@
 				6F6C99172407FBF000136425 /* ImageView.swift in Sources */,
 				6F69D41A2403D79D003AADFA /* AppDelegate.swift in Sources */,
 				6F69D41C2403D79D003AADFA /* SceneDelegate.swift in Sources */,
+				6FBA466D2409005500AF7B90 /* QRCodeView.swift in Sources */,
+				6FBA46712409041300AF7B90 /* Common.swift in Sources */,
 				6F6C99112407F52200136425 /* UserInfo.swift in Sources */,
 				6F69D41E2403D79D003AADFA /* ContentView.swift in Sources */,
 				6F6C99192407FC3400136425 /* Utils.swift in Sources */,
 				6F6C991B2407FCBE00136425 /* Configs.swift in Sources */,
 				6F6C991E2408AC7800136425 /* Alipay.swift in Sources */,
+				6FBA466F2409034B00AF7B90 /* QRCode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

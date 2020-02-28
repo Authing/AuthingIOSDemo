@@ -16,6 +16,7 @@ class UserInfo: ObservableObject {
     @Published var openid: String = ""
     @Published var phone: String = ""
     @Published var unionid: String = ""
+    @Published var token: String = ""
 }
 
 var userInfo = UserInfo()

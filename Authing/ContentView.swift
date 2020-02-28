@@ -13,6 +13,9 @@ import Combine
 struct ContentView: View {
     
     @State private var remoteImage : UIImage? = nil
+    @State private var showScanQRCode: Bool = false
+    @State private var showAlert = false
+    @State private var alertMsg = ""
     @EnvironmentObject var userInfo: UserInfo
     
     var body: some View {
@@ -20,6 +23,29 @@ struct ContentView: View {
         NavigationView {
             VStack {
                 
+                if self.showScanQRCode {
+                    VStack {
+                        CarBode(supportBarcode: [.qr, .code128]) //Set type of barcode you want to scan
+                        .interval(delay: 5.0) //Event will trigger every 5 seconds
+                           .found{
+                                //Your..Code..Here
+                            self.showScanQRCode = false
+                            let data = convertToDictionary(text: $0)!
+                            let qrcodeId = data["qrcodeId"] as! String
+                            let userPoolId = data["userPoolId"] as! String
+                            
+                            // 检查是不是y同一个用户池下的二维码
+                            if (userPoolId != UserPoolId) {
+                                self.showAlert = true
+                                self.alertMsg = "二维码错误！"
+                                return
+                            }
+                            
+                            markScanned(qrcodeId: qrcodeId)
+                          }
+                    }
+                }
+
                 VStack {
                     ImageView(withURL: self.userInfo.avatar)
                     Text(self.userInfo.nickname)
@@ -79,8 +105,30 @@ struct ContentView: View {
                         }
                     }
                     
+                    VStack {
+                        Image("qrcode")
+                        .resizable()
+                        .frame(width: 55.0, height: 55)
+                        .scaledToFill()
+                        Button(action: {
+                            
+                            if self.userInfo.token == "" {
+                                self.showAlert = true
+                                self.alertMsg = "请先登录！"
+                                return
+                            } else {
+                                self.showAlert = false
+                            }
+                            
+                            self.showScanQRCode = !self.showScanQRCode
+                        }) {
+                            Text("App 扫码")
+                        }.alert(isPresented: $showAlert) {
+                            Alert(title: Text("提示"), message: Text(self.alertMsg), dismissButton: .default(Text("知道了")))
+                        }
+                    }
                 }
-            }.navigationBarTitle(Text("Authing 社会化登录"))
+            }.navigationBarTitle(Text("Authing 移动端登录"))
         }
     }
 }

@@ -75,14 +75,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, WXApiDelegate {
                         debugPrint("Data: \(data)")
                         
                         // 更新 EnvironmentObject 触发页面更新
-                        let nickname = data["nickname"]! as! String
-                        let avatar = data["photo"]! as! String
-                        let unionid = data["unionid"]! as! String
-                        let phone = data["phone"]! as! String
-                        userInfo.avatar = avatar
-                        userInfo.nickname = nickname
-                        userInfo.unionid = unionid
-                        userInfo.phone = phone
+                        updateUserInfoEnvVariable(data: data)
                     }
                 }
             })
@@ -119,16 +112,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, WXApiDelegate {
                         let dataStr = resp["data"]! as! String
                         let data = convertToDictionary(text: dataStr)!
                         debugPrint("Data: \(data)")
-                        let nickname = data["nickname"]! as! String
-                        let avatar = data["photo"]! as! String
-                        let openid = data["openid"]! as! String
-                        let unionid = data["unionid"]! as! String
-                        let phone = data["phone"]! as! String
-                        userInfo.avatar = avatar
-                        userInfo.nickname = nickname
-                        userInfo.openid = openid
-                        userInfo.unionid = unionid
-                        userInfo.phone = phone
+                        updateUserInfoEnvVariable(data: data)
                     } else {
                         debugPrint("Message: ", message)
                     }
@@ -180,16 +164,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, WXApiDelegate {
                         debugPrint("Data: \(data)")
                         
                         // 更新 EnvironmentObject 触发页面更新
-                        let nickname = data["nickname"]! as! String
-                        let avatar = data["photo"]! as! String
-                        let openid = data["openid"]! as! String
-                        let unionid = data["unionid"]! as! String
-                        let phone = data["phone"]! as! String
-                        userInfo.avatar = avatar
-                        userInfo.nickname = nickname
-                        userInfo.openid = openid
-                        userInfo.unionid = unionid
-                        userInfo.phone = phone
+                        updateUserInfoEnvVariable(data: data)
                     }
                 }
             }
