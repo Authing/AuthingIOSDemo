@@ -22,6 +22,7 @@
 		6FBA466D2409005500AF7B90 /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBA466C2409005500AF7B90 /* QRCodeView.swift */; };
 		6FBA466F2409034B00AF7B90 /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBA466E2409034B00AF7B90 /* QRCode.swift */; };
 		6FBA46712409041300AF7B90 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBA46702409041300AF7B90 /* Common.swift */; };
+		6FE03D2F2409140000F2CA16 /* Wechat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE03D2E2409140000F2CA16 /* Wechat.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		6FBA466C2409005500AF7B90 /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
 		6FBA466E2409034B00AF7B90 /* QRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCode.swift; sourceTree = "<group>"; };
 		6FBA46702409041300AF7B90 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		6FE03D2E2409140000F2CA16 /* Wechat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wechat.swift; sourceTree = "<group>"; };
 		F342AC89F43DE037DCB0C907 /* Pods_Authing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Authing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -130,6 +132,7 @@
 				6F6C991D2408AC7800136425 /* Alipay.swift */,
 				6FBA466E2409034B00AF7B90 /* QRCode.swift */,
 				6FBA46702409041300AF7B90 /* Common.swift */,
+				6FE03D2E2409140000F2CA16 /* Wechat.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				6F6C99172407FBF000136425 /* ImageView.swift in Sources */,
 				6F69D41A2403D79D003AADFA /* AppDelegate.swift in Sources */,
 				6F69D41C2403D79D003AADFA /* SceneDelegate.swift in Sources */,
+				6FE03D2F2409140000F2CA16 /* Wechat.swift in Sources */,
 				6FBA466D2409005500AF7B90 /* QRCodeView.swift in Sources */,
 				6FBA46712409041300AF7B90 /* Common.swift in Sources */,
 				6F6C99112407F52200136425 /* UserInfo.swift in Sources */,
