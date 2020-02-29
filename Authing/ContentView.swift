@@ -91,8 +91,14 @@ struct ContentView: View {
                     }
 
                     VStack {
-                        ImageView(withURL: self.userInfo.avatar)
-                        Text(self.userInfo.nickname)
+                        if self.userInfo.avatar != "" {
+                            ImageView(withURL: self.userInfo.avatar)
+                                .cornerRadius(5)
+                                .shadow(radius: 5)
+                        }
+                        if self.userInfo.nickname != "" {
+                            Text(self.userInfo.nickname)
+                        }
                         if self.userInfo.openid != "" {
                             Text("openid: " + self.userInfo.openid)
                         }
@@ -114,7 +120,7 @@ struct ContentView: View {
                                 // your action here
                                 loginByWechat()
                                 }) {
-                                Text("微信登录")
+                                    Text("微信登录").foregroundColor(Color.black)
                                 }
                         }
                         
@@ -126,7 +132,7 @@ struct ContentView: View {
                             Button(action: {
                                 loginByMiniProgram()
                             }) {
-                                Text("小程序登录")
+                                Text("小程序登录").foregroundColor(Color.black)
                             }
                         }
                         
@@ -138,14 +144,14 @@ struct ContentView: View {
                             Button(action: {
                                 loginByAlipay()
                             }) {
-                                Text("支付宝登录")
+                                Text("支付宝登录").foregroundColor(Color.black)
                             }
                         }
                         
                         VStack {
                             Image("qrcode")
                             .resizable()
-                            .frame(width: 55.0, height: 55)
+                            .frame(width: 50, height: 50)
                             .scaledToFill()
                             Button(action: {
                                 
@@ -159,7 +165,7 @@ struct ContentView: View {
                                 
                                 self.showScanQRCode = !self.showScanQRCode
                             }) {
-                                Text("App 扫码")
+                                Text("APP 扫码").foregroundColor(Color.black)
                             }.alert(isPresented: $showAlert) {
                                 Alert(title: Text("提示"), message: Text(self.alertMsg), dismissButton: .default(Text("知道了")))
                             }
@@ -167,8 +173,6 @@ struct ContentView: View {
                     }
                 }.navigationBarTitle(Text("Authing 移动端登录"))
             }
-            
-            
         }
     }
 }

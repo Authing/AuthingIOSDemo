@@ -1,8 +1,8 @@
 # Authing 移动端登录示例
 
-<img src="https://cdn.authing.cn/blog/20200227222046.png" height="600px" align="center">
+<img src="https://cdn.authing.cn/blog/20200228174810.png" height="600px" align="center">
 
-- [移动应用微信登录](https://developers.weixin.qq.com/doc/oplatform/Mobile_App/WeChat_Login/Development_Guide.html)
+- 移动应用微信登录
 - 移动应用小程序登录
 - 移动应用支付宝登录
 - App 扫码登录
