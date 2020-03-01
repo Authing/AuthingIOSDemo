@@ -105,7 +105,7 @@ const authing = new Authing({
 一键生成扫码登录表单：
 
 ```javascript
-authing.startAppAuthScanning({
+authing.qrlogin.startScanning({
   onSuccess(userInfo) {
     alert('扫码成功，请打开控制台查看用户信息')
     console.log(userInfo);
@@ -118,12 +118,12 @@ authing.startAppAuthScanning({
 或者手动调用生成二维码、轮询二维码状态、换取用户信息：
 
 ```javascript
-authing.geneQRCode({ scence: 'APP_AUTH' }).then(res => {
+authing.qrlogin.geneCode({ scence: 'APP_AUTH' }).then(res => {
   if (res.code === 200) {
     const { qrcodeId, qrcodeUrl } = res.data
     $("#qrcode").attr('src', qrcodeUrl);
     $("#qrcode").show()
-    authing.startPollingQRCodeStatus({
+    authing.qrlogin.pollingCodeStatus({
       qrcodeId,
       scence: 'APP_AUTH',
       interval: 1000,
@@ -141,7 +141,7 @@ authing.geneQRCode({ scence: 'APP_AUTH' }).then(res => {
         const { ticket, userInfo } = data;
         console.log(`User confirmed authorization: ticket = ${ticket}`, userInfo)
         // 获取用户信息
-        authing.exchangeUserInfoWithTicket(ticket).then(res => {
+        authing.qrlogin.exchangeUserInfo(ticket).then(res => {
           const { code } = res
           if (code === 200) {
             console.log("Exchange userInfo success: ", res)
