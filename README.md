@@ -141,7 +141,7 @@ authing.qrlogin.geneCode({ scence: 'APP_AUTH' }).then(res => {
         const { ticket, userInfo } = data;
         console.log(`User confirmed authorization: ticket = ${ticket}`, userInfo)
         // 获取用户信息
-        authing.qrlogin.exchangeUser(ticket).then(res => {
+        authing.qrlogin.exchangeUserInfo(ticket).then(res => {
           const { code } = res
           if (code === 200) {
             console.log("Exchange userInfo success: ", res)
