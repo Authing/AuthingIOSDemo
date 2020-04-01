@@ -7,6 +7,9 @@
 //
 
 import Foundation
+import UIKit
+import SwiftUI
+import Alamofire
 
 func updateUserInfoEnvVariable(data: [String: Any]) {
     let nickname = data["nickname"]! as! String
@@ -31,5 +34,23 @@ func updateUserInfoEnvVariable(data: [String: Any]) {
         userInfo.phone = phone as! String
     } else {
         userInfo.phone = ""
+    }
+}
+
+
+func createSession(token: String){
+    // 移动端 SSO: createSession
+    struct MobileSSO: Encodable {
+        let userPoolId: String
+        let deviceId: String
+    }
+    let body = MobileSSO(userPoolId: UserPoolId, deviceId: UIDevice.current.identifierForVendor!.uuidString)
+    let headers: HTTPHeaders = [
+        "Authorization": token ,
+        "Accept": "application/json"
+    ]
+    let api = "\(AuthingServerHost)/oauth/sso/mobile/createSession"
+    AF.request(api, method: .post, parameters: body, encoder: JSONParameterEncoder.default, headers: headers).response { response in
+         debugPrint(response)
     }
 }

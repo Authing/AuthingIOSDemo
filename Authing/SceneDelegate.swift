@@ -76,6 +76,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, WXApiDelegate {
                         
                         // 更新 EnvironmentObject 触发页面更新
                         updateUserInfoEnvVariable(data: data)
+                        createSession(token: data["token"] as! String)
                     }
                 }
             })
@@ -113,6 +114,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, WXApiDelegate {
                         let data = convertToDictionary(text: dataStr)!
                         debugPrint("Data: \(data)")
                         updateUserInfoEnvVariable(data: data)
+                        createSession(token: data["token"] as! String)
                     } else {
                         debugPrint("Message: ", message)
                     }
@@ -165,6 +167,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, WXApiDelegate {
                         
                         // 更新 EnvironmentObject 触发页面更新
                         updateUserInfoEnvVariable(data: data)
+                        createSession(token: data["token"] as! String)
                     }
                 }
             }

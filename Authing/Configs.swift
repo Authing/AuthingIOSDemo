@@ -8,7 +8,7 @@
 
 import Foundation
 
-let AuthingServerHost = "https://oauth.authing.cn"
+let AuthingServerHost = "http://172.20.10.2:5510"
 //let AuthingServerHost = "http://192.168.0.103:5510"
 let UserPoolId: String = "5e4cdd055df3df65dc58b97d"
 let MiniProgramUsername: String = "gh_a781a791e29e"
