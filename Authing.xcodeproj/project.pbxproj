@@ -28,7 +28,7 @@
 /* Begin PBXFileReference section */
 		256E3AF4B0A2B7D85C343760 /* Pods-Authing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Authing.release.xcconfig"; path = "Target Support Files/Pods-Authing/Pods-Authing.release.xcconfig"; sourceTree = "<group>"; };
 		5F48962A8453DFC8272B34FB /* Pods-Authing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Authing.debug.xcconfig"; path = "Target Support Files/Pods-Authing/Pods-Authing.debug.xcconfig"; sourceTree = "<group>"; };
-		6F69D4162403D79D003AADFA /* Authing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Authing.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F69D4162403D79D003AADFA /* 城建 App # 1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "城建 App # 1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F69D4192403D79D003AADFA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6F69D41B2403D79D003AADFA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		6F69D41D2403D79D003AADFA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -75,7 +75,7 @@
 		6F69D4172403D79D003AADFA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6F69D4162403D79D003AADFA /* Authing.app */,
+				6F69D4162403D79D003AADFA /* 城建 App # 1.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -174,7 +174,7 @@
 			);
 			name = Authing;
 			productName = Authing;
-			productReference = 6F69D4162403D79D003AADFA /* Authing.app */;
+			productReference = 6F69D4162403D79D003AADFA /* 城建 App # 1.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -446,7 +446,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.authing.Authing;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "城建 App # 1";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Authing/Authing-Brigding-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -469,7 +469,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.authing.Authing;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "城建 App # 1";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Authing/Authing-Brigding-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

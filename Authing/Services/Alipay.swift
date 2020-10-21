@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-let GetAuthInfoUrl = "\(AuthingServerHost)/oauth/alipaymobile/authinfo/\(UserPoolId)"
+let GetAuthInfoUrl = "\(AuthingServerHost)/connection/social/alipay/\(UserPoolId)/authinfo"
 let GetUserInfoUrl = "\(AuthingServerHost)/oauth/alipaymobile/redirect/\(UserPoolId)"
 
 func loginByAlipay() {

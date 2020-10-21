@@ -21,14 +21,7 @@ func updateUserInfoEnvVariable(data: [String: Any]) {
     userInfo.unionid = unionid
     
     userInfo.token = token
-    
-    let openid = data["openid"]
-    if (openid != nil) {
-        userInfo.openid = openid as! String
-    } else {
-        userInfo.openid = ""
-    }
-    
+
     let phone = data["phone"]!
     if (type(of: phone) != NSNull.self) {
         userInfo.phone = phone as! String

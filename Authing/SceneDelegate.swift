@@ -55,17 +55,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, WXApiDelegate {
                 let user_id = data["user_id"] as! String
                 
                 if resultStatus == "9000" && result_code == "200" {
-                    let url = "\(AuthingServerHost)/oauth/alipaymobile/redirect/\(UserPoolId)"
-                    struct Body: Encodable {
-                        let auth_code: String
-                    }
-                    let body = Body(auth_code: auth_code)
-                    AF.request(
-                        url,
-                        method: .post,
-                        parameters: body,
-                        encoder: JSONParameterEncoder.default
-                    ).responseString { response in
+                    let url = "\(AuthingServerHost)/connection/social/alipay/\(UserPoolId)/callback?auth_code=\(auth_code)"
+                    AF.request(url).responseString { response in
                         
                         // 将 response.value 转化成字符串，示例如下：
                         // ["code": "200", "message": "获取用户信息成功", data: "" ]
@@ -102,7 +93,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, WXApiDelegate {
                 let code = response.code
                 debugPrint("code: " ,code)
                 
-                let url = "\(AuthingServerHost)/oauth/wechatmobile/auth/\(UserPoolId)?code=\(code!)"
+                let url = "\(AuthingServerHost)/connection/social/wechat:mobile/\(UserPoolId)/callback?code=\(code!)"
                 AF.request(url).responseString { response in
                     let resp = convertToDictionary(text: response.value!)!
                     
@@ -110,8 +101,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, WXApiDelegate {
                     let code = resp["code"]! as! Int
                     let message = resp["message"]! as! String
                     if code == 200 {
-                        let dataStr = resp["data"]! as! String
-                        let data = convertToDictionary(text: dataStr)!
+                        let data = resp["data"] as! [String:Any]
                         debugPrint("Data: \(data)")
                         updateUserInfoEnvVariable(data: data)
                         createSession(token: data["token"] as! String)

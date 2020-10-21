@@ -8,9 +8,8 @@
 
 import Foundation
 
-let AuthingServerHost = "http://172.20.10.2:5510"
-//let AuthingServerHost = "http://192.168.0.103:5510"
-let UserPoolId: String = "5e4cdd055df3df65dc58b97d"
+let AuthingServerHost = "http://192.168.50.57:3000"
+let UserPoolId: String = "59f86b4832eb28071bdd9214"
 let MiniProgramUsername: String = "gh_a781a791e29e"
 let GetPhone: Bool = true
 let MiniProgramType = WXMiniProgramType.release

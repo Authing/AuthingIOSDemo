@@ -171,7 +171,7 @@ struct ContentView: View {
                             }
                         }
                     }
-                }.navigationBarTitle(Text("Authing 移动端登录"))
+                }.navigationBarTitle(Text("城建 App # 1"))
             }
         }
     }
